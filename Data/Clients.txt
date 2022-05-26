@@ -1,0 +1,2 @@
+﻿Mirko|Sladojevic|klijent1@email.com|10/10/1960|123
+Mira|Trifunovic|klijent2@email.com|20/11/1970|123
