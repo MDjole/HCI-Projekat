@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SerbRailway
+namespace SerbRailway.Model
 {
     public enum Status
     {
@@ -20,8 +20,6 @@ namespace SerbRailway
         public Client Owner { get; set; }
         public DateTime DateSold { get; set; }
         public DateTime TravelDate { get; set; }
-        public DateTime ETA { get; set; }
-        //public int TravelTimeHours { get; set; }
-        //public int TravelTimeMinutes { get; set; }
+
     }
 }

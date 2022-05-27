@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SerbRailway.Model
 {
-    internal class Station
+    internal class Train
     {
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

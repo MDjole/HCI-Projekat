@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SerbRailway.Model.Interfaces;
 
-namespace SerbRailway
+namespace SerbRailway.Model
 {
     internal class Manager : IUser
     {
