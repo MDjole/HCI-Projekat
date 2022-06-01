@@ -13,5 +13,8 @@ namespace SerbRailway.Model.Interfaces
         string Email { get; set; }
         DateTime DateofBirth { get; set; }
         string Password { get; set; }
+
+        string ToDataString();
+
     }
 }

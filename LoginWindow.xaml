@@ -1,0 +1,108 @@
+﻿<Window x:Class="SerbRailway.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerbRailway"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="18"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="Col0"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="Row0" Height="auto"></RowDefinition>
+            <RowDefinition x:Name="Row1" Height="auto"></RowDefinition>
+            <RowDefinition x:Name="Row2" Height="auto"></RowDefinition>
+            <RowDefinition x:Name="Row3" Height="auto"></RowDefinition>
+            <RowDefinition x:Name="Row4" Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Left" 
+            Name="LoginHeading" 
+            Text="Prijava:" 
+            VerticalAlignment="Top" 
+            FontSize="24" 
+            FontStretch="ExtraCondensed"/>
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="1"
+            HorizontalAlignment="Left" 
+            Name="textBlockHeading" 
+            VerticalAlignment="Top" 
+            FontSize="18" 
+            FontStyle="Italic" 
+            Padding="5">  
+            Molimo Vas da se ulogujete da biste videli putne linije. U slučaju da nemate nalog,
+           <!--textblock as a Hyperlink.-->  
+            <TextBlock>  
+                 <Hyperlink 
+                     Click="buttonRegister_Click" 
+                     FontSize="18" 
+                     FontStyle="Normal">Registrujte se</Hyperlink>  
+            </TextBlock>  
+            <!--end textblock as a hyperlink-->  
+        </TextBlock>
+        <TextBlock 
+            Grid.Column="0"
+            Grid.Row="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Name="textBlock1" 
+            Text="Email"
+            Width="Auto" Margin="0,9,542,0" RenderTransformOrigin="0.202,0.662" />
+        <TextBox 
+            Grid.Column="0"
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Name="textBoxEmail" 
+            Width="247" />
+        <TextBlock 
+            Grid.Column="0"
+            Grid.Row="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Name="textBlock2" 
+            Text="Password" 
+            Width="Auto" Margin="182,9,0,0" RenderTransformOrigin="2.196,0.506" Grid.RowSpan="2" />
+        <PasswordBox 
+            Grid.Column="0"
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Name="passwordBox1"
+            Width="247" />
+        <Button 
+            Grid.Column="0"
+            Grid.Row="4"
+            Content="Login"  
+            Name="button1" 
+            Width="Auto" 
+            Click="button1_Click" Margin="348,39,348,0" />
+        <TextBlock 
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Grid.Row="2"
+            Height="23" 
+            x:Name ="errormessage" 
+            Width="198" 
+            Margin="548,0,0,0"  
+            OpacityMask="Crimson" 
+            Foreground="#FFE5572C"  />
+    </Grid>
+</Window>

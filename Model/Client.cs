@@ -14,5 +14,10 @@ namespace SerbRailway.Model
         public string Email { get; set; }
         public DateTime DateofBirth { get; set; }
         public string Password { get; set; }
+
+        public string ToDataString()
+        {
+            return Name + "|" + Surname + "|" + Email + "|" + DateofBirth.ToString("dd/MM/yyyy") + "|" + Password;
+        }
     }
 }
