@@ -13,6 +13,44 @@ namespace SerbRailway.Model
     /// </summary>
     internal class Timetable
     {
-        public List<RoadLine> Roads { get; set; }
+        private static DateTime Today = DateTime.Now.Date;
+        private static int DayOfWeek = (int)Today.DayOfWeek;
+
+        private static int daysInMonth = DateTime.DaysInMonth(Today.Year, Today.Month);
+        private static DateTime EndOfMonth = new DateTime(Today.Year, Today.Month, daysInMonth);
+        
+        public Dictionary<RoadLine, List<DateTime>> Roads { get; set; }
+
+        public List<RoadLine> GetRoadLinesInDate(DateTime date)
+        {
+            List<RoadLine> list = new List<RoadLine>();
+            foreach (RoadLine rl in Roads.Keys)
+            {
+                if (Roads[rl].Contains(date))
+                {
+                    list.Add(rl);
+                }
+            }
+            return list;
+        }
+
+        public void AddRoadline(RoadLine rl)
+        {
+            List<DateTime> dates = new List<DateTime>();
+            Roads.Add(rl, dates);
+            foreach (DateTime day in EachDay(Today, EndOfMonth))
+            {
+                if (rl.TravelDays.Contains((int)day.DayOfWeek))
+                {
+                    Roads[rl].Add(day);
+                }
+            }
+        }
+        private IEnumerable<DateTime> EachDay(DateTime from, DateTime thru)
+        {
+            for (DateTime day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
+                yield return day;
+        }
+
     }
 }

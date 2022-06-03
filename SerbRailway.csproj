@@ -66,9 +66,10 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModelStateInitializer.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\DataIO\ManagerIO.cs" />
-    <Compile Include="Model\DataIO\UserIO.cs" />
+    <Compile Include="Model\DataIO\ClientIO.cs" />
     <Compile Include="Model\Interfaces\IUser.cs" />
     <Compile Include="Model\RoadLine.cs" />
     <Compile Include="Model\Station.cs" />
@@ -135,12 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\Tickets.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Stations.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Trains.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />

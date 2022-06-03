@@ -10,18 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SerbRailway.Model;
 
 namespace SerbRailway
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ClientWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ClientWindow : Window
     {
-        public MainWindow()
+        private Timetable Timetable;
+
+        public ClientWindow()
         {
+            var model = new ModelStateInitializer();
+            Timetable = model.Timetable;
+
             InitializeComponent();
         }
     }

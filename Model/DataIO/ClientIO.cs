@@ -36,6 +36,10 @@ namespace SerbRailway.Model.DataIO
             return clients;
         }
 
+        /// <summary>
+        /// Used to write new client down to a file. Called for registration.
+        /// </summary>
+        /// <param name="c"></param>
         public static void AddClient(Client c)
         {
             Clients.Add(c);
@@ -43,6 +47,12 @@ namespace SerbRailway.Model.DataIO
             System.IO.File.WriteAllText(ClientsDataPath, String.Join("\n", ClientsTXT));
         }
 
+        /// <summary>
+        /// Checks credentials when logging in.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static bool ClientExists(string email, string password)
         {
             bool result = false;
@@ -59,6 +69,11 @@ namespace SerbRailway.Model.DataIO
             return result;
         }
 
+        /// <summary>
+        /// Only property that needs to be unique for registration.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static bool IsEmailUnique(string email)
         {
             bool result = true;

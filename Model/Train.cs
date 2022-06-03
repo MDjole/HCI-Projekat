@@ -8,7 +8,17 @@ namespace SerbRailway.Model
 {
     internal class Train
     {
-        public int Id { get; set; }
+        public static List<Train> AllTrains = new List<Train>()
+        {
+            new Train("Voz 2203"),
+            new Train("Voz 2212"),
+            new Train("Soko 3143"),
+            new Train("Soko 1565")
+        };
         public string Name { get; set; }
+        public Train(string name)
+        {
+            Name = name;
+        }
     }
 }
