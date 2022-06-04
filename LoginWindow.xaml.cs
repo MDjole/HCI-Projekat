@@ -24,6 +24,7 @@ namespace SerbRailway
     public partial class LoginWindow : Window
     {
         RegistrationWindow rg = new RegistrationWindow();
+        ManagerWindow mw = new ManagerWindow(); 
         public LoginWindow()
         {
             ClientIO.LoadClients();
@@ -49,7 +50,8 @@ namespace SerbRailway
                 string password = passwordBox1.Password;
                 if (ManagerIO.ManagerExists(email, password))
                 {
-                    // Redirect to manager's home screen.
+                    mw.Show();
+                    Close();
                 } else if (ClientIO.ClientExists(email, password))
                 {
                     // Redirect to client's home screen.

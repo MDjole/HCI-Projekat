@@ -28,8 +28,34 @@ namespace SerbRailway
         {
             var model = new ModelStateInitializer();
             Timetable = model.Timetable;
-
+            
             InitializeComponent();
+            this.contentControl.Content = new ManagerWelcomeContent();
         }
+
+        private void Schedule_Click(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ManagerScheduleContent();
+        }
+
+        private void Lines_Click(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ManagerLinesContent();
+        }
+
+        private void Trains_Click(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ManagerTrainsContent();
+        }
+
+        private void Reports_Click(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ManagerReportsContent();
+        }
+    }
+    public struct Constant
+    {
+        public static double ScreenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+        public static double ScreenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
     }
 }

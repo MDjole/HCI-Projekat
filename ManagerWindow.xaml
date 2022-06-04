@@ -3,10 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SerbRailway"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="ManagerWindow" Height="450" Width="800">
-    <Grid>
-        
+        d:DesignHeight="300" 
+        d:DataContext="{d:DesignInstance local:ManagerWindow}"
+    xmlns:local="clr-namespace:SerbRailway"
+        Title="Menadžer"
+        WindowState="Maximized"  WindowStyle="SingleBorderWindow"
+        Width="1080" Height="1920">
+    <!-- "{Binding Source={x:Static local:Constant.ScreenWidth}}" -->
+    <!-- "{Binding Source={x:Static local:Constant.ScreenHeight}}"-->
+
+    <Grid x:Name="MainGrid" Margin="20,15,20,15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <StackPanel>
+                <WrapPanel Orientation="Vertical">
+                    <Button x:Name="Schedule" Content="Redovi vožnje" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Schedule_Click"></Button>
+                    <Button x:Name="Lines" Content="Vozne linije" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Lines_Click"></Button>
+                    <Button x:Name="Trains" Content="Vozovi" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Trains_Click"></Button>
+                    <Button x:Name="Reports" Content="Izveštaji" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Reports_Click"></Button>
+                </WrapPanel>
+            </StackPanel>
+            <Grid Grid.Column="2">
+                <ContentControl x:Name="contentControl" Width="Auto"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

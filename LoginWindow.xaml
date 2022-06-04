@@ -59,11 +59,11 @@
         <TextBlock 
             Grid.Column="0"
             Grid.Row="2"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
             Name="textBlock1" 
             Text="Email"
-            Width="Auto" Margin="0,9,542,0" RenderTransformOrigin="0.202,0.662" />
+            Width="Auto" Margin="207,0,0,0" RenderTransformOrigin="0.202,0.662" />
         <TextBox 
             Grid.Column="0"
             Grid.Row="2"

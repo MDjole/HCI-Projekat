@@ -19,7 +19,7 @@ namespace SerbRailway.Model
         private static int daysInMonth = DateTime.DaysInMonth(Today.Year, Today.Month);
         private static DateTime EndOfMonth = new DateTime(Today.Year, Today.Month, daysInMonth);
         
-        public Dictionary<RoadLine, List<DateTime>> Roads { get; set; }
+        public Dictionary<RoadLine, List<DateTime>> Roads = new Dictionary<RoadLine, List<DateTime>>();
 
         public List<RoadLine> GetRoadLinesInDate(DateTime date)
         {
