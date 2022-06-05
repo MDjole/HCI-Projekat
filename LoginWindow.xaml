@@ -16,7 +16,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-    <Grid>
+    <Grid PreviewKeyDown="Grid_PreviewKeyDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="Col0"></ColumnDefinition>
         </Grid.ColumnDefinitions>

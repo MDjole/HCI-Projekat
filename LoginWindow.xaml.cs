@@ -30,7 +30,10 @@ namespace SerbRailway
             ClientIO.LoadClients();
             ManagerIO.LoadClients();
             InitializeComponent();
+            textBoxEmail.Focus();
         }
+
+
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             if (textBoxEmail.Text.Length == 0)
@@ -68,6 +71,12 @@ namespace SerbRailway
         {
             rg.Show();
             Close();
+        }
+
+        private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            button1_Click(sender, e);
         }
     }
 }

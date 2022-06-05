@@ -24,6 +24,7 @@ namespace SerbRailway
 
         private Timetable Timetable;
 
+
         public ManagerWindow()
         {
             var model = new ModelStateInitializer();
@@ -31,6 +32,12 @@ namespace SerbRailway
             
             InitializeComponent();
             this.contentControl.Content = new ManagerWelcomeContent();
+            this.innerGrid.Height = Constant.ScreenHeight-150;
+            this.Schedule.Height = this.innerGrid.Height / 6;
+            this.Trains.Height = this.innerGrid.Height / 6;
+            this.Lines.Height = this.innerGrid.Height / 6; 
+            this.Reports.Height = this.innerGrid.Height / 6;
+            this.FontSize = 24;
         }
 
         private void Schedule_Click(object sender, RoutedEventArgs e)
@@ -55,7 +62,7 @@ namespace SerbRailway
     }
     public struct Constant
     {
-        public static double ScreenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-        public static double ScreenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+        public static double ScreenWidth = System.Windows.SystemParameters.WorkArea.Width;
+        public static double ScreenHeight = System.Windows.SystemParameters.WorkArea.Height;
     }
 }

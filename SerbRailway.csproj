@@ -76,11 +76,21 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ManagerLinesContent.cs" />
-    <Compile Include="ManagerReportsContent.cs" />
-    <Compile Include="ManagerScheduleContent.cs" />
-    <Compile Include="ManagerTrainsContent.cs" />
-    <Compile Include="ManagerWelcomeContent.cs" />
+    <Compile Include="ManagerLinesContent.xaml.cs">
+      <DependentUpon>ManagerLinesContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReportsContent.xaml.cs">
+      <DependentUpon>ManagerReportsContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerScheduleContent.xaml.cs">
+      <DependentUpon>ManagerScheduleContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTrainsContent.xaml.cs">
+      <DependentUpon>ManagerTrainsContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWelcomeContent.xaml.cs">
+      <DependentUpon>ManagerWelcomeContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
     </Compile>
@@ -116,6 +126,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerLinesContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerReportsContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerScheduleContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerTrainsContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWelcomeContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
