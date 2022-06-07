@@ -21,7 +21,19 @@ namespace SerbRailway.Model
         
         public static Dictionary<RoadLine, List<DateTime>> Roads = new Dictionary<RoadLine, List<DateTime>>();
 
-        public List<RoadLine> GetRoadLinesInDate(DateTime date)
+        public static RoadLine GetRoadlineByNumber(int LineNumber)
+        {
+            foreach (RoadLine rl in Roads.Keys)
+            {
+                if (rl.LineNumber == LineNumber)
+                {
+                    return rl;
+                }
+            }
+            return null;
+        }
+
+        public static List<RoadLine> GetRoadLinesInDate(DateTime date)
         {
             List<RoadLine> list = new List<RoadLine>();
             foreach (RoadLine rl in Roads.Keys)

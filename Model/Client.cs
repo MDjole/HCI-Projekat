@@ -7,7 +7,7 @@ using SerbRailway.Model.Interfaces;
 
 namespace SerbRailway.Model
 {
-    internal class Client : IUser
+    public class Client : IUser
     {
         public string Name { get; set; }
         public string Surname { get; set; }
