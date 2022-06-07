@@ -7,6 +7,41 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="dataGrid" Grid.Row="0">
+
+        </DataGrid>
+        <Button 
+            x:Name="addTrainBtn"
+            Grid.Row="1"
+            Height="Auto" 
+            Width="Auto"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="+Dodaj voz"
+            FontSize="24">
+        </Button>
+        <TextBlock 
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="30" 
+            x:Name ="errormessage"
+            FontSize="24"
+            Width="Auto"
+            OpacityMask="Crimson" 
+            Foreground="#FFE5572C"  />
+        <TextBlock 
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="Auto"
+            Margin="0,30,0,0"
+            x:Name ="DescriptionMessage"
+            FontSize="24"
+            Width="Auto" />
     </Grid>
 </UserControl>

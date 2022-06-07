@@ -22,13 +22,9 @@ namespace SerbRailway
     public partial class ManagerWindow : Window
     {
 
-        private Timetable Timetable;
-
-
         public ManagerWindow()
         {
             var model = new ModelStateInitializer();
-            Timetable = model.Timetable;
             
             InitializeComponent();
             this.contentControl.Content = new ManagerWelcomeContent();

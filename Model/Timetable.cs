@@ -19,7 +19,7 @@ namespace SerbRailway.Model
         private static int daysInMonth = DateTime.DaysInMonth(Today.Year, Today.Month);
         private static DateTime EndOfMonth = new DateTime(Today.Year, Today.Month, daysInMonth);
         
-        public Dictionary<RoadLine, List<DateTime>> Roads = new Dictionary<RoadLine, List<DateTime>>();
+        public static Dictionary<RoadLine, List<DateTime>> Roads = new Dictionary<RoadLine, List<DateTime>>();
 
         public List<RoadLine> GetRoadLinesInDate(DateTime date)
         {
@@ -34,7 +34,7 @@ namespace SerbRailway.Model
             return list;
         }
 
-        public void AddRoadline(RoadLine rl)
+        public static void AddRoadline(RoadLine rl)
         {
             List<DateTime> dates = new List<DateTime>();
             Roads.Add(rl, dates);
@@ -46,10 +46,22 @@ namespace SerbRailway.Model
                 }
             }
         }
-        private IEnumerable<DateTime> EachDay(DateTime from, DateTime thru)
+        private static IEnumerable<DateTime> EachDay(DateTime from, DateTime thru)
         {
             for (DateTime day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
                 yield return day;
+        }
+
+        public static bool IsTrainOperational(Train t)
+        {
+            foreach (RoadLine road in Roads.Keys)
+            {
+                if (road.Train.Equals(t))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

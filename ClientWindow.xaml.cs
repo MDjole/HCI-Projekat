@@ -20,12 +20,10 @@ namespace SerbRailway
     /// </summary>
     public partial class ClientWindow : Window
     {
-        private Timetable Timetable;
 
         public ClientWindow()
         {
             var model = new ModelStateInitializer();
-            Timetable = model.Timetable;
 
             InitializeComponent();
         }

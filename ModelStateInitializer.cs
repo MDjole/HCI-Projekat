@@ -14,7 +14,6 @@ namespace SerbRailway
     internal class ModelStateInitializer
     {
         private readonly DateTime Today = DateTime.Now.Date;
-        public Timetable Timetable = new Timetable();
         public ModelStateInitializer()
         {
             InitializeModel();
@@ -34,7 +33,7 @@ namespace SerbRailway
                 LineNumber = 1,
                 Origin = new Station("Beograd Centar"),
                 Destination = new Station("Novi Sad ZS"),
-                Train = new Train("Soko 3143"),
+                Train = Train.AllTrains[2],
                 TravelDays = travelDays,
                 TravelStartHour = TimeSpan.FromHours(12),
                 ETA = TimeSpan.FromHours(1),
@@ -44,7 +43,7 @@ namespace SerbRailway
                 LineNumber = 2,
                 Origin = new Station("Nis ZS"),
                 Destination = new Station("Kragujevac ZS"),
-                Train = new Train("Voz 2212"),
+                Train = Train.AllTrains[1],
                 TravelDays = travelDays,
                 TravelStartHour = TimeSpan.FromHours(12),
                 ETA = TimeSpan.FromHours(2),
@@ -54,7 +53,7 @@ namespace SerbRailway
                 LineNumber = 3,
                 Origin = new Station("Trebinje ZS"),
                 Destination = new Station("Beograd Centar"),
-                Train = new Train("Voz 2203"),
+                Train = Train.AllTrains[0],
                 TravelDays = travelDays,
                 TravelStartHour = TimeSpan.FromHours(12),
                 ETA = TimeSpan.FromHours(1),
@@ -64,7 +63,7 @@ namespace SerbRailway
                 LineNumber = 4,
                 Origin = new Station("Novi Sad ZS"),
                 Destination = new Station("Kragujevac ZS"),
-                Train = new Train("Soko 3143"),
+                Train = Train.AllTrains[2],
                 TravelDays = travelDays,
                 TravelStartHour = TimeSpan.FromHours(14),
                 ETA = TimeSpan.FromHours(2),
@@ -74,7 +73,7 @@ namespace SerbRailway
                 LineNumber = 5,
                 Origin = new Station("Beograd Centar"),
                 Destination = new Station("Nis ZS"),
-                Train = new Train("Soko 1565"),
+                Train = Train.AllTrains[3],
                 TravelDays = travelDays,
                 TravelStartHour = TimeSpan.FromHours(12),
                 ETA = TimeSpan.FromHours(1),
@@ -82,7 +81,7 @@ namespace SerbRailway
             
             foreach (RoadLine line in roads)
             {
-                this.Timetable.AddRoadline(line);
+                Timetable.AddRoadline(line);
             }
         }
 
