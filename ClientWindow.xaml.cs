@@ -39,5 +39,10 @@ namespace SerbRailway
         {
             this.contentControl.Content = new ClientTicketView();
         }
+
+        private void Line_Overview(object sender, RoutedEventArgs ar)
+        {
+            contentControl.Content = new ClientRoadlineView();
+        }
     }
 }

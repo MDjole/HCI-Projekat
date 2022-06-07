@@ -71,9 +71,9 @@ namespace SerbRailway
             timeTableData.Columns.Add("Do");
             timeTableData.Columns.Add("Datum putovanja");
             timeTableData.Columns.Add("Voz");
-            timeTableData.Columns.Add("Vreme polaska");
-            timeTableData.Columns.Add("Vreme putovanja");
-            timeTableData.Columns.Add("Vreme dolaska");
+            timeTableData.Columns.Add("Vreme polaska (h)");
+            timeTableData.Columns.Add("Dužina putovanja (h)");
+            timeTableData.Columns.Add("Vreme dolaska (h)");
             List<RoadLine> roadlines = Timetable.GetRoadLinesInDate(date);
             foreach (RoadLine rl in roadlines)
             {

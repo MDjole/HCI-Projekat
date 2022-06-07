@@ -38,6 +38,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition />
+                            <RowDefinition />
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
                             <Button x:Name="TimetableBtn"
@@ -49,13 +50,22 @@
                                     Click="Timetable_SearchView"></Button>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <Button x:Name="Lines" 
+                            <Button x:Name="Tickets" 
                                     Height="Auto"
                                     FontSize="30" 
                                     Content="Pregled karata" 
                                     Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
                                     Margin ="10"
                                     Click="Ticket_Overview"></Button>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Button x:Name="Lines" 
+                                    Height="Auto"
+                                    FontSize="30" 
+                                    Content="Pregled linija" 
+                                    Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
+                                    Margin ="10"
+                                    Click="Line_Overview"></Button>
                         </Grid>
                     </Grid>
                 </Grid>
