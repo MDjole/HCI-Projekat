@@ -8,7 +8,6 @@ namespace SerbRailway.Model
 {
     public enum Status
     {
-        FREE,
         RESERVED,
         BOUGHT
     }
@@ -22,6 +21,18 @@ namespace SerbRailway.Model
         public Client Owner { get; set; }
         public DateTime DateSold { get; set; }
         public DateTime TravelDate { get; set; }
+
+        public static List<Ticket> GetAllClientTickets(Client c)
+        {
+            List<Ticket> allTickets = new List<Ticket>();
+            foreach(Ticket t in AllTickets)
+            {
+                if (t.Owner.Equals(c))
+                    allTickets.Add(t);
+            }
+            return allTickets;
+        }
+
 
     }
 }

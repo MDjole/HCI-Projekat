@@ -20,12 +20,29 @@ namespace SerbRailway
     /// </summary>
     public partial class ClientWindow : Window
     {
-
-        public ClientWindow()
+        private Client client;
+        public ClientWindow(Client c)
         {
+            client = c;
             var model = new ModelStateInitializer();
-
             InitializeComponent();
+            this.contentControl.Content = "\n\n\tDobro došli u Srbija Voz - FTN Edition!";
+            this.contentControl.FontSize = 24;
+        }
+
+        private void Timetable_SearchView(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ClientTimetable(client);
+        }
+
+        private void Ticket_Overview(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ClientTicketView(client);
+        }
+
+        private void Line_Overview(object sender, RoutedEventArgs ar)
+        {
+            contentControl.Content = new ClientRoadlineView();
         }
     }
 }

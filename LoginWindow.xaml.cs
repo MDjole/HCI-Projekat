@@ -15,6 +15,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using SerbRailway.Model.DataIO;
+using SerbRailway.Model;
 
 namespace SerbRailway
 {
@@ -24,7 +25,8 @@ namespace SerbRailway
     public partial class LoginWindow : Window
     {
         RegistrationWindow rg = new RegistrationWindow();
-        ManagerWindow mw = new ManagerWindow(); 
+        
+        
         public LoginWindow()
         {
             ClientIO.LoadClients();
@@ -51,13 +53,17 @@ namespace SerbRailway
             {
                 string email = textBoxEmail.Text;
                 string password = passwordBox1.Password;
+                Client c = ClientIO.ClientExists(email, password);
                 if (ManagerIO.ManagerExists(email, password))
                 {
+                    ManagerWindow mw = new ManagerWindow();
                     mw.Show();
                     Close();
-                } else if (ClientIO.ClientExists(email, password))
+                } else if (c != null)
                 {
-                    // Redirect to client's home screen.
+                    ClientWindow cw = new ClientWindow(c);
+                    cw.Show();
+                    Close();
                 } else
                 {
                     errormessage.Text = "Kredencijali profila nisu validni.";

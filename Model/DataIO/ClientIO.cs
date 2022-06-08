@@ -53,20 +53,18 @@ namespace SerbRailway.Model.DataIO
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static bool ClientExists(string email, string password)
+        public static Client ClientExists(string email, string password)
         {
-            bool result = false;
 
             foreach (Client client in Clients)
             {
                 if (email.Equals(client.Email) && password.Equals(client.Password))
                 {
-                    result = true;
-                    break;
+                    return client;
                 }
             }
 
-            return result;
+            return null;
         }
 
         /// <summary>

@@ -3,10 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SerbRailway"
-        mc:Ignorable="d"
-        Title="ClientWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        mc:Ignorable="d" 
+        d:DataContext="{d:DesignInstance local:ManagerWindow}"
+    xmlns:local="clr-namespace:SerbRailway"
+        Title="Menadžer"
+        WindowState="Maximized"  WindowStyle="SingleBorderWindow" 
+        Width="900" Height="750">
+
+
+    <ScrollViewer>
+        <Grid x:Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="75*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid Grid.Column="0">
+                    <Grid x:Name="innerGrid">
+                        <Grid.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="FontSize" Value="24"/>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Button x:Name="TimetableBtn"
+                                    Height="Auto"
+                                    FontSize="30" 
+                                    Content="Red vožnje" 
+                                    Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
+                                    Margin="10"
+                                    Click="Timetable_SearchView"></Button>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Button x:Name="Tickets" 
+                                    Height="Auto"
+                                    FontSize="30" 
+                                    Content="Pregled karata" 
+                                    Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
+                                    Margin ="10"
+                                    Click="Ticket_Overview"></Button>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Button x:Name="Lines" 
+                                    Height="Auto"
+                                    FontSize="30" 
+                                    Content="Pregled linija" 
+                                    Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
+                                    Margin ="10"
+                                    Click="Line_Overview"></Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ContentControl x:Name="contentControl" 
+                                Width="Auto" 
+                                Content="Prostor koji treba dinamicki da se menja"/>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
 </Window>

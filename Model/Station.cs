@@ -25,5 +25,10 @@ namespace SerbRailway.Model
             return Name == other.Name;
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }
