@@ -22,5 +22,17 @@ namespace SerbRailway.Model
         public TimeSpan TravelStartHour { get; set; }
         public TimeSpan ETA { get; set; }
 
+        public RoadLine(int lineNumber, Station origin, Station destination, Train train, List<int> travelDays, TimeSpan travelStartHour, TimeSpan eTA) 
+        {
+            LineNumber = lineNumber;
+            Origin = origin;
+            Destination = destination;
+            Train = train;
+            TravelDays = travelDays;
+            TravelStartHour = travelStartHour;
+            ETA = eTA;
+        }
+
+        public RoadLine() { }
     }
 }

@@ -29,11 +29,23 @@ namespace SerbRailway
             InitializeComponent();
             DataContext = this;
             ComponentsInitialized = true;
+            FillRoadlineNumCombobox();
+        }
+
+        private void FillRoadlineNumCombobox()
+        {
+            List<int> linenums = new List<int>();
+            foreach (RoadLine rl in Timetable.Roads.Keys.ToList())
+            {
+                linenums.Add(rl.LineNumber);
+            }
+            RoadLineNumbers.ItemsSource = linenums;
         }
 
         private void MonthlyReport()
         {
             // FILL TABLE WITH TICKETS SOLD THIS MONTH
+            dataGrid.IsReadOnly = false;
             dataTable.Rows.Clear();
             dataTable.Columns.Clear();
 
@@ -64,7 +76,7 @@ namespace SerbRailway
                     dr["Do"] = t.Line.Destination.Name;
                     dr["Ime i prezime kupca"] = t.Owner.Name + " " + t.Owner.Surname;
                     dr["Datum kupovine"] = t.DateSold;
-                    dr["Datum putovanja"] = t.TravelDate;
+                    dr["Datum putovanja"] = t.TravelDate + t.Line.TravelStartHour;
                     dataTable.Rows.Add(dr);
                 }
             }
@@ -81,10 +93,12 @@ namespace SerbRailway
 
             dataGrid.ItemsSource = dataTable.DefaultView;
             dataGrid.Items.Refresh();
+            dataGrid.IsReadOnly = true;
         }
         private void SelectedTravelReport()
         {
             // FILL TABLE WITH TICKETS SOLD ON SELECTED TRAVEL
+            dataGrid.IsReadOnly = false;
             dataTable.Rows.Clear();
             dataTable.Columns.Clear();
 
@@ -99,7 +113,7 @@ namespace SerbRailway
             int count = 0;
             foreach (Ticket t in Ticket.AllTickets)
             {
-                DateTime date = DateTime.ParseExact(TravelDate.Text, "MM/dd/yyyy", null);
+                DateTime date = DateTime.Parse(TravelDate.Text);
                 if (t.Line.LineNumber == (int)RoadLineNumbers.SelectedItem
                     && t.Line.TravelDays.Contains((int)date.DayOfWeek)
                     && t.Status == Status.BOUGHT)
@@ -126,6 +140,7 @@ namespace SerbRailway
             }
             dataGrid.ItemsSource = dataTable.DefaultView;
             dataGrid.Items.Refresh();
+            dataGrid.IsReadOnly = true;
         }
         private void ShowReport(object sender, RoutedEventArgs args)
         {

@@ -19,5 +19,16 @@ namespace SerbRailway.Model
         {
             return Name + "|" + Surname + "|" + Email + "|" + DateofBirth.ToString("dd/MM/yyyy") + "|" + Password;
         }
+
+        public Client(string name, string surname, string email, DateTime dateofBirth, string password)
+        {
+            Name = name;
+            Surname = surname;
+            Email = email;
+            DateofBirth = dateofBirth;
+            Password = password;
+        }
+
+        public Client() { }
     }
 }

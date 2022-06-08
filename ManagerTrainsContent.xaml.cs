@@ -51,7 +51,7 @@ namespace SerbRailway
             trainTable.Columns.Add("Vozovi");
             trainTable.Columns.Add("Id");
 
-            foreach (Train t in Train.AllTrains)
+            foreach (Train t in Train.AllTrains.ToList())
             {
                 DataRow dr = trainTable.NewRow();
                 dr["Vozovi"] = t.Name;
@@ -126,7 +126,7 @@ namespace SerbRailway
                 // Extract row data from event
                 DataRow changedRow = args.Row;
                 int train_id = Int32.Parse((string)changedRow["Id"]);
-                foreach (Train t in Train.AllTrains)
+                foreach (Train t in Train.AllTrains.ToList())
                 {
                     // find the train in DB
                     if (t.GetId() == train_id)

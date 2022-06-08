@@ -96,7 +96,7 @@ namespace SerbRailway
                         Surname = lastname,
                         Email = email,
                         Password = password,
-                        DateofBirth = DateTime.ParseExact(birthday, "MM/dd/yyyy", null)
+                        DateofBirth = DateTime.Parse(birthday)
                     };
                     if (ClientIO.IsEmailUnique(email))
                     {
