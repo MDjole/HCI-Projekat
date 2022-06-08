@@ -214,6 +214,10 @@
   <ItemGroup>
     <Resource Include="Data\Tickets.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\serbia.svg" />
+    <Resource Include="Data\station_15x15.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -26,11 +26,19 @@ namespace SerbRailway
         {
             InitializeComponent();
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
+        }
+
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow login = new LoginWindow();
             login.Show();
-            Close();
+            Hide();
         }
         private void button2_Click(object sender, RoutedEventArgs e)
         {

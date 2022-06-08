@@ -55,6 +55,14 @@ namespace SerbRailway
         {
             this.contentControl.Content = new ManagerReportsContent();
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
+        }
+
     }
     public struct Constant
     {

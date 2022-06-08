@@ -58,12 +58,12 @@ namespace SerbRailway
                 {
                     ManagerWindow mw = new ManagerWindow();
                     mw.Show();
-                    Close();
+                    Hide();
                 } else if (c != null)
                 {
                     ClientWindow cw = new ClientWindow(c);
                     cw.Show();
-                    Close();
+                    Hide();
                 } else
                 {
                     errormessage.Text = "Kredencijali profila nisu validni.";
@@ -76,13 +76,20 @@ namespace SerbRailway
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
             rg.Show();
-            Close();
+            Hide();
         }
 
         private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
             button1_Click(sender, e);
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
         }
     }
 }
