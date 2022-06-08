@@ -37,7 +37,7 @@ namespace SerbRailway
 
         private void Ticket_Overview(object sender, RoutedEventArgs e)
         {
-            this.contentControl.Content = new ClientTicketView();
+            this.contentControl.Content = new ClientTicketView(client);
         }
 
         private void Line_Overview(object sender, RoutedEventArgs ar)

@@ -41,12 +41,13 @@ namespace SerbRailway
         {
             Station from = (Station) FromStation.SelectedItem;
             Station to = (Station) ToStation.SelectedItem;
-            DateTime date = (DateTime) TravelDate.SelectedDate;
-            if (date == null)
+            object date1 = TravelDate.SelectedDate;
+            if (date1 == null)
             {
                 errormessage.Text = "Morate odabrati datum";
                 return;
             }
+            DateTime date = (DateTime)date1;
             if (from != null && to != null)
             {
                 if (from.Equals(to))
@@ -85,9 +86,9 @@ namespace SerbRailway
                     dr["Do"] = to.Name;
                     dr["Datum putovanja"] = date;
                     dr["Voz"] = rl.Train.Name;
-                    dr["Vreme polaska"] = rl.TravelStartHour;
-                    dr["Vreme putovanja"] = rl.ETA;
-                    dr["Vreme dolaska"] = rl.TravelStartHour + rl.ETA;
+                    dr["Vreme polaska (h)"] = rl.TravelStartHour;
+                    dr["Dužina putovanja (h)"] = rl.ETA;
+                    dr["Vreme dolaska (h)"] = rl.TravelStartHour + rl.ETA;
                     timeTableData.Rows.Add(dr);
                     
                 }
