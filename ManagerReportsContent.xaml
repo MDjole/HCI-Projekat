@@ -7,6 +7,85 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <ComboBox 
+                x:Name="Options"
+                Height="Auto" Width="Auto"
+                FontSize="20"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="20,20,0,0"
+                SelectedIndex="0"
+                SelectionChanged="ShowAdditionalComponents">
+                <ComboBoxItem>Prodate karte u toku meseca</ComboBoxItem>
+                <ComboBoxItem>Prodate karte za jednu vožnju</ComboBoxItem>
+            </ComboBox>
+            <Button
+                Height="Auto" Width="Auto"
+                FontSize="20"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"
+                Content="Prikaži"
+                Click="ShowReport"></Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Label Content="Linije"
+                   x:Name="LineLbl"
+                   Height="Auto" Width="Auto"
+                   FontSize="20"
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"
+                   Margin="20, 30, 0, 0"
+                   Visibility="Collapsed"/>
+            <ComboBox 
+                Height="Auto" Width="100" 
+                Margin="80,30,0,0"
+                FontSize="20"
+                x:Name="RoadLineNumbers" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Visibility="Collapsed"/>
+            <Label Content="Datum"
+                   x:Name="DateLbl"
+                   Height="Auto" Width="Auto"
+                   FontSize="20"
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"
+                   Margin="190, 30, 0, 0"
+                   Visibility="Collapsed" />
+            <DatePicker 
+                Height="Auto" Width="140" 
+                Margin="260,30,0,0"
+                FontSize="20"
+                x:Name="TravelDate" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Visibility="Collapsed"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <TextBlock 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="Auto" Height="Auto"
+                x:Name ="errormessage" 
+                Margin="20,10,0,0"
+                OpacityMask="Crimson" 
+                Foreground="#FFE5572C"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="0">
+            <DataGrid x:Name="dataGrid">
+                
+            </DataGrid>
+        </Grid>
     </Grid>
 </UserControl>
