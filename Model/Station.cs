@@ -10,15 +10,22 @@ namespace SerbRailway.Model
     {
 
         public static List<Station> AllStations = new List<Station>()
-        { new Station("Beograd Centar"),
-          new Station("Novi Sad ZS"),
-          new Station("Nis ZS"),
-          new Station("Kragujevac ZS"),
-          new Station("Trebinje ZS")};
+        { new Station("Beograd Centar", 328.6, 282),
+          new Station("Novi Sad ZS", 240.6, 181),
+          new Station("Nis ZS", 539.6, 585),
+          new Station("Kragujevac ZS", 396.6, 452),
+          new Station("Jagodina ZS", 461.6, 471)};
+
+        public string Icon = "../../Data/station_30x30.png";
+
+        public double Xpos { get; set; }
+        public double Ypos { get; set; }
         public string Name { get; set; }
-        public Station(string name)
+        public Station(string name, double xpos, double ypos)
         {
             Name = name;
+            Xpos = xpos;
+            Ypos = ypos;
         }
         public bool Equals(Station other)
         {

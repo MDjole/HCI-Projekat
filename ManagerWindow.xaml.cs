@@ -31,7 +31,8 @@ namespace SerbRailway
             this.innerGrid.Height = Constant.ScreenHeight-150;
             this.Schedule.Height = this.innerGrid.Height / 6;
             this.Trains.Height = this.innerGrid.Height / 6;
-            this.Lines.Height = this.innerGrid.Height / 6; 
+            this.Lines.Height = this.innerGrid.Height / 6;
+            this.NetworkLines.Height = this.innerGrid.Height / 6;
             this.Reports.Height = this.innerGrid.Height / 6;
             this.FontSize = 24;
         }
@@ -54,6 +55,11 @@ namespace SerbRailway
         private void Reports_Click(object sender, RoutedEventArgs e)
         {
             this.contentControl.Content = new ManagerReportsContent();
+        }
+
+        private void NetworkLines_Click(object sender, RoutedEventArgs e)
+        {
+            this.contentControl.Content = new ManagerNetworkLineShow();
         }
 
         protected override void OnClosed(EventArgs e)

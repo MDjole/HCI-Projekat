@@ -21,6 +21,21 @@ namespace SerbRailway.Model
         
         public static Dictionary<RoadLine, List<DateTime>> Roads = new Dictionary<RoadLine, List<DateTime>>();
 
+        public static bool AreStationsConnected(Station s1, Station s2)
+        {
+            foreach (RoadLine rl in Roads.Keys.ToList())
+            {
+                if (s1.Equals(rl.Origin) && s2.Equals(rl.Destination))
+                {
+                    return true;
+                } else if (s2.Equals(rl.Origin) && s1.Equals(rl.Destination))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static RoadLine GetRoadlineByNumber(int LineNumber)
         {
             foreach (RoadLine rl in Roads.Keys)

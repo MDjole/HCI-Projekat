@@ -88,6 +88,9 @@
     <Compile Include="ManagerLinesContent.xaml.cs">
       <DependentUpon>ManagerLinesContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerNetworkLineShow.xaml.cs">
+      <DependentUpon>ManagerNetworkLineShow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerReportsContent.xaml.cs">
       <DependentUpon>ManagerReportsContent.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ManagerLinesContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerNetworkLineShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,8 +222,16 @@
     <Resource Include="Data\Tickets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\serbia.svg" />
     <Resource Include="Data\station_15x15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\serbia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\station_45x45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\station_30x30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
