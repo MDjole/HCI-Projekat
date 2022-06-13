@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerbRailway"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="850"
+        Title="Prijavljivanje" Height="450" Width="850"
         Icon="Data/station_45x45.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -53,9 +53,10 @@
                  <Hyperlink 
                      Click="buttonRegister_Click" 
                      FontSize="18" 
-                     FontStyle="Normal">Registrujte se</Hyperlink>  
+                     FontStyle="Normal">registrujte se</Hyperlink>  
             </TextBlock>  
-            <!--end textblock as a hyperlink-->  
+            <!--end textblock as a hyperlink-->
+            .
         </TextBlock>
         <TextBlock 
             Grid.Column="0"
@@ -63,14 +64,16 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Name="textBlock1" 
+            FontSize="16"
             Text="Email"
-            Width="Auto" Margin="207,0,0,0" RenderTransformOrigin="0.202,0.662" />
+            Width="Auto" Margin="215,0,0,0" RenderTransformOrigin="0.202,0.662" />
         <TextBox 
             Grid.Column="0"
             Grid.Row="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             Name="textBoxEmail" 
+            FontSize="16"
             Width="247" />
         <TextBlock 
             Grid.Column="0"
@@ -78,8 +81,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Name="textBlock2" 
-            Text="Password" 
-            Width="Auto" Margin="182,9,0,0" RenderTransformOrigin="2.196,0.506" Grid.RowSpan="2" />
+            FontSize="16"
+            Text="Lozinka" 
+            Width="Auto" Margin="215,9,0,0" RenderTransformOrigin="2.196,0.506" Grid.RowSpan="2" />
         <PasswordBox 
             Grid.Column="0"
             Grid.Row="3"
@@ -90,7 +94,8 @@
         <Button 
             Grid.Column="0"
             Grid.Row="4"
-            Content="Login"  
+            Content="Prijava"
+            FontSize="18"
             Name="button1" 
             Width="Auto" 
             Click="button1_Click" Margin="348,39,348,0" />
