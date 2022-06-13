@@ -91,5 +91,18 @@ namespace SerbRailway.Model
             return false;
         }
 
+
+        public static int getNewRoadLineID()
+        {
+            int id = -1;
+            foreach (RoadLine rl in Roads.Keys)
+            {
+                id = rl.LineNumber;
+            }
+            id++;
+            return id;
+        }
+
+
     }
 }
