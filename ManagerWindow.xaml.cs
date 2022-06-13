@@ -37,6 +37,17 @@ namespace SerbRailway
             this.FontSize = 24;
         }
 
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            var windows = Application.Current.Windows;
+            IInputElement focusedControl = FocusManager.GetFocusedElement(windows[3]);
+            if (focusedControl is DependencyObject)
+            {
+                string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                HelpProvider.ShowHelp(str, this);
+            }
+        }
+
         private void Schedule_Click(object sender, RoutedEventArgs e)
         {
             this.contentControl.Content = new ManagerScheduleContent();

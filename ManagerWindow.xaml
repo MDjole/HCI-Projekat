@@ -18,7 +18,9 @@
     <!-- "{Binding Source={x:Static local:Constant.ScreenWidth}}" -->
     <!-- "{Binding Source={x:Static local:Constant.ScreenHeight}}"-->
 
-
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
     <ScrollViewer>
         <Grid x:Name="MainGrid">
             <Grid.RowDefinitions>

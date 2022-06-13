@@ -30,6 +30,16 @@ namespace SerbRailway
             this.contentControl.FontSize = 24;
         }
 
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
+            if (focusedControl is DependencyObject)
+            {
+                string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                HelpProvider.ShowHelp(str, this);
+            }
+        }
+
         private void Timetable_SearchView(object sender, RoutedEventArgs e)
         {
             this.contentControl.Content = new ClientTimetable(client);

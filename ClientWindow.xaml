@@ -15,7 +15,9 @@
         Title="Menadžer"
         WindowState="Maximized"  WindowStyle="SingleBorderWindow" 
         Width="900" Height="750">
-
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
 
     <ScrollViewer>
         <Grid x:Name="MainGrid">
