@@ -100,6 +100,7 @@
     <Compile Include="Model\DataIO\ClientIO.cs" />
     <Compile Include="Model\Interfaces\IUser.cs" />
     <Compile Include="Model\RoadLine.cs" />
+    <Compile Include="Model\Schedule.cs" />
     <Compile Include="Model\Station.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\Timetable.cs" />

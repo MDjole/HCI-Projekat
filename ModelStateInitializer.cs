@@ -28,8 +28,8 @@ namespace SerbRailway
 
         private void InitializeTickets()
         {
-            Client c1 = new Client("Mirko" ,"Sladojevic", "klijent1@email.com", DateTime.Parse("10/10/1960"), "123");
-            Client c2 = new Client("Mira" , "Trifunovic", "klijent2@email.com", DateTime.Parse("11/20/1970"), "123");
+            Client c1 = new Client("Mirko" ,"Sladojevic", "klijent1@email.com", DateTime.ParseExact("10/10/1960", "dd/MM/yyyy", null), "123");
+            Client c2 = new Client("Mira" , "Trifunovic", "klijent2@email.com", DateTime.ParseExact("20/11/1970", "dd/MM/yyyy", null), "123");
 
             DateTime Today = DateTime.Now;
 
@@ -38,7 +38,7 @@ namespace SerbRailway
             {
                 Status = Status.BOUGHT,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/16/2022"),
+                TravelDate = DateTime.ParseExact("06/16/2022","MM/dd/yyyy",null),
                 Id = 1,
                 Owner = c1,
                 Line = RoadLines[0]
@@ -47,7 +47,7 @@ namespace SerbRailway
             {
                 Status = Status.RESERVED,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/16/2022"),
+                TravelDate = DateTime.ParseExact("06/16/2022", "MM/dd/yyyy", null),
                 Id = 2,
                 Owner = c1,
                 Line = RoadLines[3]
@@ -56,7 +56,7 @@ namespace SerbRailway
             {
                 Status = Status.RESERVED,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/15/2022"),
+                TravelDate = DateTime.ParseExact("06/15/2022", "MM/dd/yyyy", null),
                 Id = 3,
                 Owner = c1,
                 Line = RoadLines[4]
@@ -65,7 +65,7 @@ namespace SerbRailway
             {
                 Status = Status.BOUGHT,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/17/2022"),
+                TravelDate = DateTime.ParseExact("06/17/2022", "MM/dd/yyyy", null),
                 Id = 4,
                 Owner = c1,
                 Line = RoadLines[4]
@@ -74,7 +74,7 @@ namespace SerbRailway
             {
                 Status = Status.RESERVED,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/16/2022"),
+                TravelDate = DateTime.ParseExact("06/16/2022", "MM/dd/yyyy", null),
                 Id = 5,
                 Owner = c1,
                 Line = RoadLines[2]
@@ -83,7 +83,7 @@ namespace SerbRailway
             {
                 Status = Status.BOUGHT,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/16/2022"),
+                TravelDate = DateTime.ParseExact("06/16/2022", "MM/dd/yyyy", null),
                 Id = 6,
                 Owner = c2,
                 Line = RoadLines[1]
@@ -92,7 +92,7 @@ namespace SerbRailway
             {
                 Status = Status.BOUGHT,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/16/2022"),
+                TravelDate = DateTime.ParseExact("06/16/2022", "MM/dd/yyyy", null),
                 Id = 7,
                 Owner = c2,
                 Line = RoadLines[0]
@@ -101,7 +101,7 @@ namespace SerbRailway
             {
                 Status = Status.BOUGHT,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/16/2022"),
+                TravelDate = DateTime.ParseExact("06/16/2022", "MM/dd/yyyy", null),
                 Id = 8,
                 Owner = c2,
                 Line = RoadLines[3]
@@ -110,7 +110,7 @@ namespace SerbRailway
             {
                 Status = Status.RESERVED,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/20/2022"),
+                TravelDate = DateTime.ParseExact("06/20/2022", "MM/dd/yyyy", null),
                 Id = 9,
                 Owner = c2,
                 Line = RoadLines[4]
@@ -119,7 +119,7 @@ namespace SerbRailway
             {
                 Status = Status.RESERVED,
                 DateSold = Today.AddDays(-7),
-                TravelDate = DateTime.Parse("06/21/2022"),
+                TravelDate = DateTime.ParseExact("06/21/2022", "MM/dd/yyyy", null),
                 Id = 10,
                 Owner = c2,
                 Line = RoadLines[2]
