@@ -13,6 +13,7 @@
         d:DataContext="{d:DesignInstance local:ManagerWindow}"
     xmlns:local="clr-namespace:SerbRailway"
         Title="Menadžer"
+        Icon="Data/station_45x45.png"
         WindowState="Maximized"  WindowStyle="SingleBorderWindow" 
         Width="900" Height="750">
     <!-- "{Binding Source={x:Static local:Constant.ScreenWidth}}" -->

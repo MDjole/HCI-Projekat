@@ -12,7 +12,8 @@
         mc:Ignorable="d" 
         d:DataContext="{d:DesignInstance local:ManagerWindow}"
     xmlns:local="clr-namespace:SerbRailway"
-        Title="Menadžer"
+        Title="Klijent"
+        Icon="Data/station_45x45.png"
         WindowState="Maximized"  WindowStyle="SingleBorderWindow" 
         Width="900" Height="750">
     <Window.CommandBindings>

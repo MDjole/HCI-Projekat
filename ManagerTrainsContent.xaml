@@ -21,7 +21,8 @@
             Width="Auto"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Content="+Dodaj voz"
+            Content="Dodaj voz"
+            ToolTip="Dodavanje voza koji ne postoji u sistemu"
             FontSize="24">
         </Button>
         <TextBlock 

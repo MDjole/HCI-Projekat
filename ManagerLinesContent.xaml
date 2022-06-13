@@ -32,6 +32,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Dodaj liniju"
+            ToolTip="Dodavanje nove vozne linije u sistem"
             FontSize="24" Grid.Row="1"/>
         <Button 
             x:Name="btn_Update"
@@ -43,6 +44,7 @@
             VerticalAlignment="Top"
             Content="Izmeni"
             Margin="10"
+            ToolTip="Izmena izabrane vozne linije"
             FontSize="24" />
         <Button 
             x:Name="btn_Delete"
@@ -54,6 +56,7 @@
             VerticalAlignment="Top"
             Content="Obriši liniju"
             Margin="10"
+            ToolTip="Brisanje izabrane vozne linije"
             FontSize="24" />
 
         <TextBlock 
@@ -136,59 +139,63 @@
             </Border>
 
             <Button 
-                x:Name="btn_Save_Insert"
-                Click="btn_Save_Insert_Click"
-                Grid.Row="6"
-                Grid.Column="0"
-                Height="Auto" 
-                Width="Auto"
-                Margin="10"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Dodaj unetu liniju"
-                FontSize="24">
+            x:Name="btn_Save_Insert"
+            Click="btn_Save_Insert_Click"
+            Margin="10"
+            Grid.Row="6"
+            Grid.Column="0"
+            Height="Auto" 
+            Width="Auto"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Dodaj unetu liniju"
+            ToolTip="Dodavanje unete linije u sistem"
+            FontSize="24">
             </Button>
 
             <Button 
-                x:Name="btn_Save"
-                Click="btn_Save_Click"
-                Grid.Row="6"
-                Grid.Column="2"
-                Height="Auto" 
-                Width="Auto"
-                Margin="10"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Content="Sačuvaj izmene"
-                FontSize="24">
+            x:Name="btn_Save"
+            Click="btn_Save_Click"
+            Margin="10"
+            Grid.Row="6"
+            Grid.Column="2"
+            Height="Auto" 
+            Width="Auto"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Sačuvaj izmene"
+            ToolTip="Sačuvaj izmene linije u sistemu"
+            FontSize="24">
             </Button>
 
             <Button 
-                x:Name="btn_Cancel_Save_Insert"
-                Click="btn_Cancel_Save_Insert_Click"
-                Margin="10"
-                Grid.Row="7"
-                Grid.Column="0"
-                Height="Auto" 
-                Width="Auto"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Odustani"
-                FontSize="24">
+            x:Name="btn_Cancel_Save_Insert"
+            Click="btn_Cancel_Save_Insert_Click"
+            Margin="10"
+            Grid.Row="7"
+            Grid.Column="0"
+            Height="Auto" 
+            Width="Auto"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Odustani"
+            ToolTip="Odustani od dodavanja nove linije"
+            FontSize="24">
             </Button>
 
             <Button 
-                x:Name="btn_Cancel_Save"
-                Click="btn_Cancel_Save_Click"
-                Margin="10"
-                Grid.Row="7"
-                Grid.Column="2"
-                Height="Auto" 
-                Width="Auto"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Content="Odustani"
-                FontSize="24">
+            x:Name="btn_Cancel_Save"
+            Click="btn_Cancel_Save_Click"
+            Margin="10"
+            Grid.Row="7"
+            Grid.Column="2"
+            Height="Auto" 
+            Width="Auto"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Odustani"
+            ToolTip="Odustani od izmene podataka o liniji"
+            FontSize="24">
             </Button>
 
         </Grid>
