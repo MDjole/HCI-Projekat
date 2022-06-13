@@ -13,9 +13,10 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="0" Grid.ColumnSpan="2">
+        <ScrollViewer Grid.Row="0" Grid.ColumnSpan="3">
             <DataGrid x:Name="dataGrid" SelectionChanged="dataGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}"></DataGrid>
         </ScrollViewer>
 
@@ -55,28 +56,40 @@
             </Button>
         </StackPanel>
 
-        <WrapPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Name="lineLb" Text="Broj linije:" FontSize="24"/>
-                <TextBox Name="lineBox" FontSize="24" Width="160"/>
-            </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <TextBlock Name="scheduleLb" Text="Red vožnje:" FontSize="24"/>
-                <ScrollViewer>
-                    <DataGrid x:Name="singleGrid"></DataGrid>
-                </ScrollViewer>
-            </StackPanel>
-        </WrapPanel>
+        <WrapPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="lineLb" Text="Broj linije:" FontSize="24"/>
+                    <TextBox Name="lineBox" FontSize="24" Width="160"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="scheduleLb" Text="Red vožnje:" FontSize="24"/>
+                    <ScrollViewer>
+                        <DataGrid x:Name="singleGrid"></DataGrid>
+                    </ScrollViewer>
+                </StackPanel>
+            </WrapPanel>
+        
+            <WrapPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+                <TextBlock 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Height="30" 
+                x:Name ="errormessage"
+                FontSize="24"
+                Width="Auto"
+                OpacityMask="Crimson" 
+                Foreground="#FFE5572C"  />
+                <TextBlock
+                Grid.Row="1"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Height="Auto"
+                Margin="0,30,0,0"
+                x:Name ="DescriptionMessage"
+                FontSize="24"
+                Width="Auto"/>
+            </WrapPanel>
 
-        <TextBlock 
-            Grid.Row="1"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Height="30" 
-            x:Name ="errormessage"
-            FontSize="24"
-            Width="Auto"
-            OpacityMask="Crimson" 
-            Foreground="#FFE5572C"  />
+        
     </Grid>
 </UserControl>

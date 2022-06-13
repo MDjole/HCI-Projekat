@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Text.RegularExpressions;
+using WPFCustomMessageBox;
 
 namespace SerbRailway
 {
@@ -41,6 +42,13 @@ namespace SerbRailway
             dataGrid.FontSize = 24;
             singleGrid.FontSize = 24;
             FillTable();
+            DescriptionMessage.Text = 
+                "Za dodavanje novog reda upišite broj vozne linije\n" +
+                "u označeno polje i pritisnite dugme Dodaj.\n" +
+                "Za izmenu postojećeg reda kliknite na željeni\n" +
+                "red i izmenite vremena u donjoj tabeli.\n" +
+                "Za brisanje reda kliknite na željeni red\n" +
+                "i pritisnite dugme Obriši.\n";
         }
 
         private void FillTable()
@@ -129,7 +137,7 @@ namespace SerbRailway
                 Regex rgx = new Regex(Schedule.format);
                 if (!rgx.IsMatch(input))
                 {
-                    errormessage.Text = "Uneto vreme \"" + input + "\"\nnije pravilnog formata (hh:mm).";
+                    errormessage.Text = "Uneto vreme \"" + input + "\" nije pravilnog formata (hh:mm).";
                     return;
                 }
                 else
@@ -184,7 +192,10 @@ namespace SerbRailway
                 }
                 else
                 {
-                    lineNumbers.Add(ln);
+                    MessageBoxResult res = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
+                        "Da li sigurno želite da dodate ovaj red vožnje?", "Da", "Ne");
+                    if (res == MessageBoxResult.Yes)
+                        lineNumbers.Add(ln);
                     AddNewSchedule(ln);
                 }
             } else
@@ -198,7 +209,10 @@ namespace SerbRailway
         {
             int i = dataGrid.SelectedIndex;
             DataRowView a = (DataRowView)dataGrid.SelectedItems[0];
-            AttemptToDelete(i, a);
+            MessageBoxResult res = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
+                        "Da li sigurno želite da obrišete ovaj red vožnje?", "Da", "Ne");
+            if (res == MessageBoxResult.Yes)
+                AttemptToDelete(i, a);
 
         }
 
@@ -213,7 +227,11 @@ namespace SerbRailway
                     errormessage.Text = "Uneta linija ne postoji!";
                 }
                 else {
-                    AddTimes(ln);
+                    MessageBoxResult res = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
+                        "Da li sigurno želite da izmenite ovaj red vožnje?", "Da", "Ne");
+                    if (res == MessageBoxResult.Yes)
+                        AddTimes(ln);
+                    else return;
                 }
             }
             else
