@@ -46,19 +46,19 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
-                            <Button x:Name="Schedule" FontSize="30" Content="Redovi vožnje" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Schedule_Click"></Button>
+                            <Button x:Name="Schedule" FontSize="30" Content="Redovi vožnje" ToolTip="Prikaz, izmena i brisanje redova vožnje" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Schedule_Click"></Button>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <Button x:Name="Lines" FontSize="30" Content="Vozne linije" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Lines_Click"></Button>
+                            <Button x:Name="Lines" FontSize="30" Content="Vozne linije" ToolTip="Prikaz, izmena i brisanje Voznih linija" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Lines_Click"></Button>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <Button x:Name="NetworkLines" FontSize="30" Content="Mrezni prikaz" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="NetworkLines_Click"></Button>
+                            <Button x:Name="NetworkLines" FontSize="30" Content="Mrezni prikaz" ToolTip="Mrežni prikaz Voznih linija" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="NetworkLines_Click"></Button>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <Button x:Name="Trains" FontSize="30" Content="Vozovi" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Trains_Click"></Button>
+                            <Button x:Name="Trains" FontSize="30" Content="Vozovi" ToolTip="Prikaz, izmena i brisanje Vozova" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Trains_Click"></Button>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <Button x:Name="Reports" FontSize="30" Content="Izveštaji" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Reports_Click"></Button>
+                            <Button x:Name="Reports" FontSize="30" Content="Izveštaji" ToolTip="Prikaz izveštaja" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Margin ="10" Click="Reports_Click"></Button>
                         </Grid>
                     </Grid>
                 </Grid>

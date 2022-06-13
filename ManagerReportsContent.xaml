@@ -36,6 +36,7 @@
                 HorizontalAlignment="Center"
                 Margin="0,20,0,0"
                 Content="Prikaži"
+                ToolTip="Prikaz izveštaja"
                 Click="ShowReport"></Button>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">

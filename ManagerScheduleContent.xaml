@@ -28,6 +28,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Content="Dodaj"
+                ToolTip="Dodaj novi red vožnje"
                 FontSize="24"
                 Margin="10"
                 Click="addBtn_Click">
@@ -39,6 +40,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Content="Izmeni"
+                ToolTip="Izmeni postojeći red vožnje"
                 FontSize="24"
                 Margin="10"
                 Click="editBtn_Click">
@@ -50,6 +52,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Content="Obriši"
+                ToolTip="Obriši red vožnje"
                 FontSize="24"
                 Margin="10"
                 Click="deleteBtn_Click">

@@ -32,6 +32,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Dodaj liniju"
+            ToolTip="Dodavanje nove vozne linije u sistem"
             FontSize="24" Grid.Row="1"/>
         <Button 
             x:Name="btn_Update"
@@ -42,6 +43,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Izmeni"
+            ToolTip="Izmena izabrane vozne linije"
             FontSize="24" />
         <Button 
             x:Name="btn_Delete"
@@ -52,6 +54,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Obriši liniju"
+            ToolTip="Brisanje izabrane vozne linije"
             FontSize="24" />
 
         <TextBlock 
@@ -143,6 +146,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Dodaj unetu liniju"
+            ToolTip="Dodavanje unete linije u sistem"
             FontSize="24">
             </Button>
             
@@ -157,6 +161,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Content="Sačuvaj izmene"
+            ToolTip="Sačuvaj izmene linije u sistemu"
             FontSize="24">
             </Button>
 
@@ -171,6 +176,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Odustani"
+            ToolTip="Odustani od dodavanja nove linije"
             FontSize="24">
             </Button>
 
@@ -185,6 +191,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Content="Odustani"
+            ToolTip="Odustani od izmene podataka o liniji"
             FontSize="24">
             </Button>
 

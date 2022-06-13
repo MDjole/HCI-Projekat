@@ -47,6 +47,7 @@
                                     Height="Auto"
                                     FontSize="30" 
                                     Content="Red vožnje" 
+                                    ToolTip="Prikaz reda vožnje"
                                     Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
                                     Margin="10"
                                     Click="Timetable_SearchView"></Button>
@@ -56,6 +57,7 @@
                                     Height="Auto"
                                     FontSize="30" 
                                     Content="Pregled karata" 
+                                    ToolTip="Pregled Vaših karata koje ste kupili ili rezervisali"
                                     Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
                                     Margin ="10"
                                     Click="Ticket_Overview"></Button>
@@ -65,6 +67,7 @@
                                     Height="Auto"
                                     FontSize="30" 
                                     Content="Pregled linija" 
+                                    ToolTip="Prikaz voznih linija"
                                     Style="{DynamicResource MaterialDesignFlatLightBgButton}" 
                                     Margin ="10"
                                     Click="Line_Overview"></Button>
