@@ -11,10 +11,10 @@ namespace SerbRailway.Model
 
         public static List<Station> AllStations = new List<Station>()
         { new Station("Beograd Centar", 328.6, 282),
-          new Station("Novi Sad ZS", 240.6, 181),
-          new Station("Nis ZS", 539.6, 585),
-          new Station("Kragujevac ZS", 396.6, 452),
-          new Station("Jagodina ZS", 461.6, 471)};
+          new Station("Novi Sad ŽS", 240.6, 181),
+          new Station("Nis ŽS", 539.6, 585),
+          new Station("Kragujevac ŽS", 396.6, 452),
+          new Station("Jagodina ŽS", 461.6, 471)};
 
         public string Icon = "../../Data/station_30x30.png";
 

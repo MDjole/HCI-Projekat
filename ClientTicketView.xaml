@@ -9,7 +9,7 @@
     <Grid>
         
         <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-            <DataGrid x:Name="dataGrid">
+            <DataGrid x:Name="dataGrid" FontSize="18">
 
             </DataGrid>
         </Grid>

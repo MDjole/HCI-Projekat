@@ -62,5 +62,11 @@ namespace SerbRailway
             Application.Current.Shutdown();
         }
 
+        private void logout_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow lw = new LoginWindow();
+            lw.Show();
+            Hide();
+        }
     }
 }
