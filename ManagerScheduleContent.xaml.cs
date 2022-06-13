@@ -214,10 +214,13 @@ namespace SerbRailway
         {
             int i = dataGrid.SelectedIndex;
             DataRowView a = (DataRowView)dataGrid.SelectedItems[0];
-            MessageBoxResult res = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
-                        "Da li sigurno želite da obrišete ovaj red vožnje?", "Da", "Ne");
-            if (res == MessageBoxResult.Yes)
-                AttemptToDelete(i, a);
+            if (a != null)
+            {
+                MessageBoxResult res = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
+                            "Da li sigurno želite da obrišete ovaj red vožnje?", "Da", "Ne");
+                if (res == MessageBoxResult.Yes)
+                    AttemptToDelete(i, a);
+            }
 
         }
 

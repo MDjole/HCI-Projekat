@@ -24,8 +24,8 @@ namespace SerbRailway
         {
             InitializeComponent();
             string curDir = Directory.GetCurrentDirectory();
-            string path = String.Format("{0}/HelpPages/managerHelp.htm", curDir);
-            Uri u = new Uri(String.Format("file:///C:/VisualStudio_Projects/HCI%20Veliki%20projekat/HCI-Projekat/HelpPages/managerHelp.htm"));
+            string path = String.Format("{0}/HelpPages/managerHelp.html", curDir);
+            Uri u = new Uri(String.Format("file:///D:/Downloads/a.%20faks/HCI/HCI-Projekat/HelpPages/managerHelp.html"));
             ch = new JavascriptControlHelper(originator);
             wbHelp.ObjectForScripting = ch;
             wbHelp.Navigate(u);
@@ -36,11 +36,16 @@ namespace SerbRailway
         {
             InitializeComponent();
             string curDir = Directory.GetCurrentDirectory();
-            string path = String.Format("{0}/HelpPages/clientHelp.htm", curDir);
-            Uri u = new Uri(String.Format("file:///C:/VisualStudio_Projects/HCI%20Veliki%20projekat/HCI-Projekat/HelpPages/clientHelp.htm"));
+            string path = String.Format("{0}/HelpPages/clientHelp.html", curDir);
+            Uri u = new Uri(String.Format("file:///D:/Downloads/a.%20faks/HCI/HCI-Projekat/HelpPages/clientHelp.html"));
             ch = new JavascriptControlHelper(originator);
             wbHelp.ObjectForScripting = ch;
             wbHelp.Navigate(u);
+
+        }
+
+        private void wbHelp_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
+        {
 
         }
     }

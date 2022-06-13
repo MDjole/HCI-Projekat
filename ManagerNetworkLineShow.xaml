@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SerbRailway"
              mc:Ignorable="d" 
+             Name="main"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -13,43 +14,48 @@
         </ResourceDictionary>
 
     </UserControl.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="6*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0" Grid.Column="0">
-            <ListView x:Name="allStations"
+    <DockPanel LastChildFill="True">
+        <ListView x:Name="allStations"
+                  DockPanel.Dock="Left"
                       AllowDrop="True"
                       PreviewMouseLeftButtonDown="listview_PreviewMouseLeftButtonDown" 
                       PreviewMouseMove="listview_PreviewMouseMove">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal"
-                                    AllowDrop="True">
-                            <Image Source="{Binding Icon}" />
-                            <TextBlock FontSize="30" Text="{Binding Path=Text}" Padding="5 0 0 0"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-        <Grid Grid.Row="0" Grid.Column="1">
-            <Canvas x:Name="Cnv"
-                    AllowDrop="True"
-                    PreviewDrop="Canvas_PreviewDrop">
-                <Image x:Name="MapImg"
-                       Source="/Data/serbia.jpg" 
-                       VerticalAlignment="Stretch"
-                       HorizontalAlignment="Center"/>
-            </Canvas>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" AllowDrop="True">
+                        <Image Source="{Binding Icon}" />
+                        <TextBlock FontSize="30" Text="{Binding Path=Text}" Padding="5 0 0 0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Canvas x:Name="Cnv"
+                AllowDrop="True"
+                PreviewDrop="Canvas_PreviewDrop">
+            <Image x:Name="MapImg"
+                    Source="/Data/serbia.jpg" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Stretch="Fill" StretchDirection="Both"/>
+        </Canvas>
 
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                
+
+            </Grid>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="2"></Grid>
-    </Grid>
+    </DockPanel>
 </UserControl>

@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 //using Windows.UI.Xaml.Controls;
 using MaterialDesignThemes;
 using System.Collections.ObjectModel;
+using WPFCustomMessageBox;
 
 namespace SerbRailway
 {
@@ -340,6 +341,11 @@ namespace SerbRailway
                 System.Windows.MessageBox.Show("Morate izbrati barem jedan Dan putovanja!");
                 return;
             }
+
+            MessageBoxResult mbr = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
+               "Da li ste sigurni da želite da dodate novu liniju?", "Da", "Ne");
+            if (mbr != MessageBoxResult.Yes) return;
+
             if (l[0] == 0)
             {
                 l.Remove(0);
@@ -615,6 +621,10 @@ namespace SerbRailway
                 return;
             }
 
+            MessageBoxResult mbr = CustomMessageBox.ShowYesNo("Da li ste sigurni?", 
+                "Da li ste sigurni da želite da ažurirate liniju?", "Da", "Ne");
+            if (mbr != MessageBoxResult.Yes) return;
+
             // azurirati DB
             for (int index = 0; index < Timetable.Roads.Count; index++)
             {
@@ -670,6 +680,11 @@ namespace SerbRailway
                     return;
                 }
             }
+
+            MessageBoxResult mbr = CustomMessageBox.ShowYesNo("Da li ste sigurni?",
+               "Da li ste sigurni da želite da obrišete ovu liniju?", "Da", "Ne");
+            if (mbr != MessageBoxResult.Yes) return;
+
             this.selectedRow = dataGrid.SelectedIndex;
             if (selectedRow != -1)
             {

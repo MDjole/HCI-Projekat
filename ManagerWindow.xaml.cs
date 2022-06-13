@@ -28,12 +28,13 @@ namespace SerbRailway
             
             InitializeComponent();
             this.contentControl.Content = new ManagerWelcomeContent();
-            this.innerGrid.Height = Constant.ScreenHeight-150;
-            this.Schedule.Height = this.innerGrid.Height / 6;
-            this.Trains.Height = this.innerGrid.Height / 6;
-            this.Lines.Height = this.innerGrid.Height / 6;
-            this.NetworkLines.Height = this.innerGrid.Height / 6;
-            this.Reports.Height = this.innerGrid.Height / 6;
+            this.innerGrid.Height = Constant.ScreenHeight-100;
+            this.Schedule.Height = this.innerGrid.Height / 8;
+            this.Trains.Height = this.innerGrid.Height / 8;
+            this.Lines.Height = this.innerGrid.Height / 8;
+            this.NetworkLines.Height = this.innerGrid.Height / 8;
+            this.Reports.Height = this.innerGrid.Height / 8;
+            this.logout.Height = this.innerGrid.Height / 8;
             this.FontSize = 24;
         }
 
@@ -80,6 +81,12 @@ namespace SerbRailway
             Application.Current.Shutdown();
         }
 
+        private void logout_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow lw = new LoginWindow();
+            lw.Show();
+            Hide();
+        }
     }
     public struct Constant
     {
