@@ -43,13 +43,16 @@ namespace SerbRailway
             singleGrid.FontSize = 24;
             FillTable();
             DescriptionMessage.Text = 
-                "Za dodavanje novog reda upišite broj vozne linije\n" +
-                "u označeno polje i pritisnite dugme Dodaj.\n" +
-                "Za izmenu postojećeg reda kliknite na željeni\n" +
-                "red i izmenite vremena u donjoj tabeli.\n" +
-                "Za brisanje reda kliknite na željeni red\n" +
-                "i pritisnite dugme Obriši.\n";
+                "Za dodavanje novog reda upišite\n" +
+                "broj vozne linije u označeno polje\n" +
+                "i pritisnite dugme Dodaj.\n" +
+                "Za izmenu postojećeg reda kliknite\n" +
+                "na željeni red i izmenite\n" +
+                "vremena u donjoj tabeli.\n" +
+                "Za brisanje reda kliknite na željeni\n" +
+                "red i pritisnite dugme Obriši.\n";
         }
+
 
         private void FillTable()
         {
@@ -95,15 +98,16 @@ namespace SerbRailway
             if (i != -1 && i < AllSchedules.Count())
             {
                 Schedule s = AllSchedules[i];
-                Schedule.AllSchedules.Remove(s);
-                scheduleTable.Rows.Remove(drv.Row);
-                dataGrid.Items.Refresh();
-                errormessage.Text = "";
                 if (lineNumbers.Contains(s.LineNumber))
                 {
                     errormessage.Text = "Voz jos uvek radi na nekoj liniji.";
                     return;
                 }
+                Schedule.AllSchedules.Remove(s);
+                scheduleTable.Rows.Remove(drv.Row);
+                dataGrid.Items.Refresh();
+                errormessage.Text = "";
+                
             }
 
         }
@@ -197,6 +201,7 @@ namespace SerbRailway
                     if (res == MessageBoxResult.Yes)
                         lineNumbers.Add(ln);
                     AddNewSchedule(ln);
+                    lineBox.Text = "";
                 }
             } else
             {
